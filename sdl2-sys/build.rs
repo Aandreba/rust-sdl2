@@ -133,6 +133,8 @@ fn compile_sdl2(sdl2_build_path: &Path, target_os: &str) -> PathBuf {
 
     if target_os == "windows-gnu" {
         cfg.define("VIDEO_OPENGLES", "OFF");
+    } else if target_os = "windows-msvc" {
+        cfg.define("CMAKE_VS_GLOBALS", "TrackFileAccess=false");
     }
 
     if target_os == "android" {
