@@ -527,6 +527,7 @@ fn copy_dynamic_libraries(sdl2_compiled_path: &Path, target_os: &str) {
 }
 
 fn main() {
+    panic!("{:#?}", std::env::vars_os());
     let target = env::var("TARGET").expect("Cargo build scripts always have TARGET");
     let host = env::var("HOST").expect("Cargo build scripts always have HOST");
     let target_os = get_os_from_triple(target.as_str()).unwrap();
